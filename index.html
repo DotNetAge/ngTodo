@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo QuickStart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app/site.css" />
+    <!-- 1. Load libraries -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {
+          app: {
+            "format": "register",
+            "defaultExtension": "js"
+          }
+        },
+      });
+
+      System.import('app/bootstrap')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <todo-app>Loading...</todo-app>
+    <p><center><small>angular2 测试</small></center></p>
+  </body>
+
+</html>
