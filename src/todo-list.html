@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<ul class="todos">
+	<li>
+		<input #new_item
+			(keyup.enter) = "addItem(new_item.value); new_item.value='' "
+			placeholder="What need to be done?"
+			autofocus="true" />
+	</li>
+	<li *ngFor="#todo of todos"
+		
+		[class.checked]="todo.done">
+		<input type="checkbox" 
+		[(ngModel)]="todo.done" 
+		(ngModelChange) = "setDone(todo)"
+		/><label>{{ todo.value }}</label><button (click)="onDelete(todo)"></button>
+	</li>
+</ul>
